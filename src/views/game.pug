@@ -1,0 +1,13 @@
+
+doctype html
+html
+  head
+    title Game Stage #{stage}
+    link(rel="stylesheet", href="/styles.css")
+  body
+    .container
+      h1 Stage #{stage}
+      p= question
+      form(action="/answer", method="post")
+        input(type="text", name="answer", required)
+        button(type="submit") Submit

@@ -1,0 +1,23 @@
+version: "3.8"
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    depends_on:
+      - redis
+    environment:
+      - REDIS_HOST=redis # Pass the Redis hostname as an environment variable
+    networks:
+      - app_network
+
+  redis:
+    image: "redis"
+    ports:
+      - "6379:6379"
+    networks:
+      - app_network
+
+networks:
+  app_network:
+    driver: bridge
