@@ -79,4 +79,6 @@ app.get("/get-numbers", async (req, res) => {
   res.json(numbers.map(Number)); // Convert to numbers and send as JSON
 });
 
-app.listen(3000, () => console.log("Game server running on port 3000"));
+app.listen(process.env.PORT || 3000, () =>
+  console.log("Game server running on port 3000")
+);
