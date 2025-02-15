@@ -1,10 +1,11 @@
 doctype html
-html
+html(lang="en")
   head
-    title Valentine's Game
-    link(rel="stylesheet", href="/styles.css")
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Memory Game
+    link(rel="stylesheet", href="/style.css")
   body
-    .container
-      h1 Welcome to the Game!
-      form(action="/start", method="post")
-        button(type="submit") Start The Show!
+    .game-container
+      button#start-button Start The Show!
+    script(src="/script.js")

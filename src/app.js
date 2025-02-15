@@ -1,4 +1,3 @@
-// server.js (Main entry point)
 const express = require("express");
 const app = express();
 const path = require("path");
@@ -42,12 +41,11 @@ app.get("/game", async (req, res) => {
   let stage = await redis.get("game_stage");
   stage = parseInt(stage);
   if (stage >= gameData.questions.length) {
-    return res.render("win");
+    return res.redirect("/win"); // Redirect to /win when all stages are cleared
   }
   res.render("game", { stage, question: gameData.questions[stage].question });
 });
 
-// Modify the /answer route to store the numbers
 app.post("/answer", async (req, res) => {
   let stage = await redis.get("game_stage");
   stage = parseInt(stage);
@@ -66,6 +64,11 @@ app.post("/answer", async (req, res) => {
     await redis.set("game_stage", stage);
   }
   res.redirect("/game");
+});
+
+app.get("/win", async (req, res) => {
+  const numbers = await redis.lrange("collected_numbers", 0, -1); // Retrieve collected numbers
+  res.render("win", { numbers: numbers.map(Number) }); // Pass numbers to the template
 });
 
 app.get("/get-numbers", async (req, res) => {

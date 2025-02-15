@@ -1,9 +1,30 @@
-.container
-  h1 Congratulations!
-  p You completed all the stages!
-  p I love you ❤️
-  canvas#heartCanvas(width="400", height="400")
-  .love-letter
-    p Dear [Her Name],
-    p This game is a small token of my love for you...
-  script(src="/heart.js")
+//- doctype html
+//- html(lang="en")
+//-   head
+//-     meta(charset="UTF-8")
+//-     meta(name="viewport", content="width=device-width, initial-scale=1.0")
+//-     title You Win!
+//-     link(rel="stylesheet", href="/style.css")
+//-   body
+//-     .game-container
+//-       h1 Congratulations!
+//-       p You've completed all the stages.
+//-       canvas#heart-canvas
+//-     script(src="/script.js")
+
+// views/win.pug
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title You Win!
+    link(rel="stylesheet", href="/style.css")
+  body
+    .game-container
+      h1 Congratulations!
+      p You've completed all the stages.
+      canvas#heart-canvas
+    script.
+      const numbers = !{JSON.stringify(numbers)}; // Pass collected numbers to the front-end
+    script(src="/script.js")
