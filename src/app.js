@@ -7,6 +7,7 @@ const redis = new Redis({
   host: process.env.REDIS_HOST || "localhost", // Use the REDIS_HOST environment variable
   port: 6379,
   password: process.env.REDIS_PASS || null,
+  db: 0,
 });
 const bodyParser = require("body-parser");
 
