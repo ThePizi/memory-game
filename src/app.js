@@ -1,10 +1,13 @@
 const express = require("express");
 const app = express();
 const path = require("path");
+require("dotenv").config();
 const Redis = require("ioredis");
 const redis = new Redis({
   host: process.env.REDIS_HOST || "localhost", // Use the REDIS_HOST environment variable
   port: 6379,
+  password: process.env.REDIS_PASS || null,
+  db: 0,
 });
 const bodyParser = require("body-parser");
 
@@ -19,7 +22,7 @@ const gameData = {
     { question: "What's the nickname I saved you in my phone?", answer: "Sob" },
     { question: "When is my birthday?", answer: "27" },
     { question: "When is your birthday?", answer: "9" },
-    { question: "How many times did we video call?", answer: "1" },
+    { question: "How many times did we video call?", answer: "2" },
     { question: "How many times have I told you a deep secret?", answer: "1" },
     { question: "How many songs have I sent you?", answer: "15" },
     { question: "What band did we first talk about?", answer: "127" },
