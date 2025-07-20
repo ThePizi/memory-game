@@ -1,3 +1,4 @@
+const loadElementWithDelay = require("./otherJS/loader");
 const startButton = document.getElementById("start-button");
 const character = document.getElementById("character");
 const dialogBox = document.getElementById("dialog-box");
@@ -11,6 +12,11 @@ let stage = 0;
 
 // Start the game
 startButton.addEventListener("click", () => {
+  const element = document.getElementById("start-button");
+  loadElementWithDelay(element, 1000).then(() => {
+    console.log("Element has finished loading!");
+  });
+
   fetch("/start", { method: "POST" }).then(() => {
     window.location.href = "/game";
   });
@@ -57,6 +63,12 @@ function drawHeart() {
 
   ctx.stroke();
 }
+
+// Usage example
+const element = document.getElementById("start-button");
+loadElementWithDelay(element, 1000).then(() => {
+  console.log("Element has finished loading!");
+});
 
 // // Draw heart-shaped graph (for the win screen)
 // function drawHeart() {

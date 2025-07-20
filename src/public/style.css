@@ -58,11 +58,13 @@ body {
   padding: 18px 36px;
   cursor: pointer;
   transition: all 0.3s;
+  opacity: 0px;
 }
 
 #start-button:hover {
   background: white;
   color: black;
+  opacity: 0px;
 }
 
 .balloon {

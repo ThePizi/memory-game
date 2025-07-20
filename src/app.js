@@ -19,15 +19,15 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // Store game state in Redis
 const gameData = {
   questions: [
-    { question: "What's the nickname I saved you in my phone?", answer: "Sob" },
-    { question: "When is my birthday?", answer: "27" },
-    { question: "When is your birthday?", answer: "9" },
-    { question: "How many times did we video call?", answer: "2" },
-    { question: "How many times have I told you a deep secret?", answer: "1" },
-    { question: "How many songs have I sent you?", answer: "15" },
-    { question: "What band did we first talk about?", answer: "127" },
-    { question: "What day did we start our journey?", answer: "29 november" },
-    { question: "How many times have I said 'I love you'?", answer: "19" },
+    { question: "question1", answer: "answer1" },
+    { question: "question2", answer: "answer2" },
+    { question: "question3", answer: "answer4" },
+    { question: "question4", answer: "answer5" },
+    { question: "question6", answer: "answer6" },
+    { question: "question7", answer: "answer7" },
+    { question: "question8", answer: "answer8" },
+    { question: "question9", answer: "answer9" },
+    { question: "question10", answer: "answer10" },
   ],
 };
 
